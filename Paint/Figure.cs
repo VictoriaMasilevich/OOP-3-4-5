@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Drawing;
 
-namespace AbstractFigureClassLibrary
+namespace Paint
 {
     [Serializable]
     public abstract class Figure

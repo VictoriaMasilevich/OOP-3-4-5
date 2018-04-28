@@ -4,9 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
-using AbstractFigureClassLibrary;
 
-namespace AbstractFigureClassLibrary
+namespace Paint
 {
     [Serializable]
     public class Circle : Ellipse
@@ -27,7 +26,7 @@ namespace AbstractFigureClassLibrary
         public override void Draw(Graphics g, Color color)
         {
             GetParams();
-            if (((StartX - EndX) > 0) && ((StartY - EndX) > 0))       //works
+            if (((StartX - EndX) > 0) && ((StartY - EndX) > 0))    
             {
                 g.DrawEllipse(new Pen(color, widthParams), StartX - (StartX - EndX), StartY - (StartY - EndY), diameter, diameter);
             }
@@ -39,7 +38,7 @@ namespace AbstractFigureClassLibrary
             {
                 g.DrawEllipse(new Pen(color, widthParams), StartX, StartY - (StartY - EndY), diameter, diameter);
             }
-            if (((StartX - EndX) < 0) && ((StartY - EndX) < 0))           //works
+            if (((StartX - EndX) < 0) && ((StartY - EndX) < 0))       
             {
                 g.DrawEllipse(new Pen(color, widthParams), StartX, StartY, diameter, diameter);
             }

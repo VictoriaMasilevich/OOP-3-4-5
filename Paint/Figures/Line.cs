@@ -4,18 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
-using AbstractFigureClassLibrary;
 
-namespace AbstractFigureClassLibrary
+
+namespace Paint
 {
     [Serializable]
     public class Line : Figure
     {
-        public Line()
-        {
-          
-        }
-
         public override void Draw(Graphics g, Color color)
         {   
             GetParams();

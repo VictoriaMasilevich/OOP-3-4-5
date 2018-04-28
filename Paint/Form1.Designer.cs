@@ -1,4 +1,4 @@
-﻿namespace AbstractFigureClassLibrary
+﻿namespace Paint
 {
     partial class Form1
     {
@@ -28,10 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.EllipseButton = new System.Windows.Forms.Button();
             this.LineButton = new System.Windows.Forms.Button();
             this.SquareButton = new System.Windows.Forms.Button();
-            this.RectangleButton = new System.Windows.Forms.Button();
+            this.CircleButton = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.buttonChangeColor = new System.Windows.Forms.Button();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
@@ -44,7 +45,6 @@
             this.buttonDeserialize = new System.Windows.Forms.Button();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.openFileDialog2 = new System.Windows.Forms.OpenFileDialog();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxColor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarPenWidth)).BeginInit();
@@ -87,23 +87,23 @@
             this.SquareButton.UseVisualStyleBackColor = true;
             this.SquareButton.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnFigure_MouseDown);
             // 
-            // RectangleButton
+            // CircleButton
             // 
-            this.RectangleButton.Location = new System.Drawing.Point(5, 104);
-            this.RectangleButton.Margin = new System.Windows.Forms.Padding(2);
-            this.RectangleButton.Name = "RectangleButton";
-            this.RectangleButton.Size = new System.Drawing.Size(166, 38);
-            this.RectangleButton.TabIndex = 0;
-            this.RectangleButton.Tag = "2";
-            this.RectangleButton.Text = "Прямоугольник";
-            this.RectangleButton.UseVisualStyleBackColor = true;
-            this.RectangleButton.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnFigure_MouseDown);
+            this.CircleButton.Location = new System.Drawing.Point(5, 104);
+            this.CircleButton.Margin = new System.Windows.Forms.Padding(2);
+            this.CircleButton.Name = "CircleButton";
+            this.CircleButton.Size = new System.Drawing.Size(166, 38);
+            this.CircleButton.TabIndex = 0;
+            this.CircleButton.Tag = "2";
+            this.CircleButton.Text = "Круг";
+            this.CircleButton.UseVisualStyleBackColor = true;
+            this.CircleButton.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnFigure_MouseDown);
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.LineButton);
             this.groupBox1.Controls.Add(this.SquareButton);
-            this.groupBox1.Controls.Add(this.RectangleButton);
+            this.groupBox1.Controls.Add(this.CircleButton);
             this.groupBox1.Controls.Add(this.EllipseButton);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.groupBox1.Location = new System.Drawing.Point(9, 10);
@@ -180,7 +180,7 @@
             this.buttonClear.Name = "buttonClear";
             this.buttonClear.Size = new System.Drawing.Size(166, 34);
             this.buttonClear.TabIndex = 13;
-            this.buttonClear.Text = "Очистить поле";
+            this.buttonClear.Text = "Очистить";
             this.buttonClear.UseVisualStyleBackColor = true;
             this.buttonClear.Click += new System.EventHandler(this.buttonClear_Click);
             // 
@@ -212,16 +212,12 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
-            // openFileDialog2
-            // 
-            this.openFileDialog2.FileName = "openFileDialog2";
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.ClientSize = new System.Drawing.Size(983, 411);
+            this.BackColor = System.Drawing.Color.Linen;
+            this.ClientSize = new System.Drawing.Size(995, 411);
             this.Controls.Add(this.buttonDeserialize);
             this.Controls.Add(this.buttonSerialize);
             this.Controls.Add(this.buttonClear);
@@ -231,11 +227,16 @@
             this.Controls.Add(this.pictureBoxColor);
             this.Controls.Add(this.buttonChangeColor);
             this.Controls.Add(this.groupBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Paint";
+            this.TransparencyKey = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.Load += new System.EventHandler(this.Form1_Load);
-            this.ClientSizeChanged += new System.EventHandler(this.Form1_ClientSizeChanged);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxColor)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarPenWidth)).EndInit();
@@ -250,7 +251,7 @@
         private System.Windows.Forms.Button EllipseButton;
         private System.Windows.Forms.Button LineButton;
         private System.Windows.Forms.Button SquareButton;
-        private System.Windows.Forms.Button RectangleButton;
+        private System.Windows.Forms.Button CircleButton;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button buttonChangeColor;
         private System.Windows.Forms.ColorDialog colorDialog1;
@@ -263,7 +264,6 @@
         private System.Windows.Forms.Button buttonDeserialize;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
-        private System.Windows.Forms.OpenFileDialog openFileDialog2;
     }
 }
 

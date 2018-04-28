@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AbstractFigureClassLibrary
+namespace Paint
 {
     public abstract class Creator
     {

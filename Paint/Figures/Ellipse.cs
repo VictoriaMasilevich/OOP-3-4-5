@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
-using AbstractFigureClassLibrary;
 
-namespace AbstractFigureClassLibrary
+
+namespace Paint
 {
     [Serializable]
     public class Ellipse : Figure
@@ -20,7 +20,6 @@ namespace AbstractFigureClassLibrary
 
         public override void GetParams()
         {
-
             base.GetParams();
             CenterX = StartX + ((EndX - StartX) / 2);
             CenterY = StartY + ((EndY - StartY) / 2);

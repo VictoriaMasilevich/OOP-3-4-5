@@ -53,11 +53,9 @@
     <Compile Include="Figures\CreatorEllipse.cs" />
     <Compile Include="Figures\CreatorLine.cs" />
     <Compile Include="Figures\CreatorList.cs" />
-    <Compile Include="Figures\CreatorRectangle.cs" />
     <Compile Include="Figures\CreatorSquare.cs" />
     <Compile Include="Figures\Ellipse.cs" />
     <Compile Include="Figures\Line.cs" />
-    <Compile Include="Figures\Rectangle.cs" />
     <Compile Include="Figures\Square.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>

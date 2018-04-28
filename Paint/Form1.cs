@@ -12,10 +12,9 @@ using System.Windows.Input;
 using System.IO;
 using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
-using AbstractFigureClassLibrary;
 using System.Reflection;
 
-namespace AbstractFigureClassLibrary
+namespace Paint
 {
     public partial class Form1 : Form
     {
@@ -24,7 +23,6 @@ namespace AbstractFigureClassLibrary
         private Figure figure;
         private Pen pen;
         public BinaryFormatter formatter;
-        public Figure selectedFigure;
         private Point currentPoint;
         private List<Point> MovingPoints;
         private CreatorList creatorList = new CreatorList();
@@ -51,7 +49,6 @@ namespace AbstractFigureClassLibrary
             labelPenWidth.Text = "Толщина линий: " + trackBarPenWidth.Value.ToString();
             buttonSerialize.Enabled = false;
             buttonDeserialize.Enabled = true;
-            selectedFigure = null;
         }
                               
         private void DrawAll()
@@ -91,11 +88,7 @@ namespace AbstractFigureClassLibrary
                 figure.widthParams = pen.Width;
                 Figures.Add(figure);
                 buttonSerialize.Enabled = true;
-                selectedFigure = null;
             }
-            else
-            {
-            } 
         }
 
         private void pictureBox1_MouseMove(object sender, MouseEventArgs e)
@@ -121,16 +114,7 @@ namespace AbstractFigureClassLibrary
                 figure.Draw(graphics, figure.colorParams);
                 DrawAll();
             }
-            if ((selectedFigure != null) && (e.Button == MouseButtons.Left))
-            {
-                graphics.Clear(Color.White);
-                selectedFigure.StartPoint(new Point((selectedFigure.StartX - (MovingPoints[MovingPoints.Count - 2].X - MovingPoints[MovingPoints.Count - 1].X)), selectedFigure.StartY - (MovingPoints[MovingPoints.Count - 2].Y - MovingPoints[MovingPoints.Count - 1].Y)));
-                selectedFigure.EndPoint(new Point((selectedFigure.EndX - (MovingPoints[MovingPoints.Count - 2].X - MovingPoints[MovingPoints.Count - 1].X)), selectedFigure.EndY - (MovingPoints[MovingPoints.Count - 2].Y - MovingPoints[MovingPoints.Count - 1].Y)));
-                DrawAll();
-                selectedFigure.Draw(graphics, Color.Red);
-            }
             figure = null;
-            selectedFigure = null;
             MovingPoints.Clear(); 
         }
 
@@ -140,22 +124,15 @@ namespace AbstractFigureClassLibrary
             graphics.Clear(Color.White);
         }
 
-        private void Form1_ClientSizeChanged(object sender, EventArgs e)
-        {   
-            pictureBox1.Width = this.Width;
-            pictureBox1.Height = this.Height; 
-        }
-
         private void buttonSerialize_Click(object sender, EventArgs e)
         {
             if (Figures.Count == 0)
             {
-                MessageBox.Show("Нечего сериалиализовывать.", "Ошибка", MessageBoxButtons.OK);
+                MessageBox.Show("Нечего сериалиализовывать", "Ошибка", MessageBoxButtons.OK);
             }
             else
             {
                 var formatter = new BinaryFormatter();
-                formatter.AssemblyFormat = System.Runtime.Serialization.Formatters.FormatterAssemblyStyle.Simple;
                 saveFileDialog1.ShowDialog();
                 if (saveFileDialog1.FileName != "")
                 {
@@ -170,8 +147,6 @@ namespace AbstractFigureClassLibrary
         private void buttonDeserialize_Click(object sender, EventArgs e)
         {
             var formatter = new BinaryFormatter();
-            formatter.AssemblyFormat = System.Runtime.Serialization.Formatters.FormatterAssemblyStyle.Simple;
-            formatter.Binder = new VersionConfigToNamespaceAssemblyObjectBinder();
             openFileDialog1.ShowDialog();
             try
             {
@@ -179,49 +154,15 @@ namespace AbstractFigureClassLibrary
                 {
                     using (var fStream = File.OpenRead(openFileDialog1.FileName))
                     {
-                        try
-                        {
                             Figures = new List<Figure>();
                             Figures = (List<Figure>)formatter.Deserialize(fStream);
                             DrawAll();
-                        }
-                        catch (SerializationException)
-                        {
-                            MessageBox.Show("Ошибка десериализации", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            Figures.Clear();
-                        }
                     }
                 }
             }
             catch (FileNotFoundException)
             {
                 MessageBox.Show("Файл не найден", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        class VersionConfigToNamespaceAssemblyObjectBinder : SerializationBinder
-        {
-            public override Type BindToType(string assemblyName, string typeName)
-            {
-                Type typeToDeserialize = null;
-                try
-                {
-                    string ToAssemblyName = assemblyName.Split(',')[0];
-                    Assembly[] Assemblies = AppDomain.CurrentDomain.GetAssemblies();
-                    foreach (Assembly ass in Assemblies)
-                    {
-                        if (ass.FullName.Split(',')[0] == ToAssemblyName)
-                        {
-                            typeToDeserialize = ass.GetType(typeName);
-                            break;
-                        }
-                    }
-                }
-                catch (System.Exception exception)
-                {
-                    throw exception;
-                }
-                return typeToDeserialize;
             }
         }
     }

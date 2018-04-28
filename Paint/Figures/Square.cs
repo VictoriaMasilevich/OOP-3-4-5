@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
-using AbstractFigureClassLibrary;
 
 
-namespace AbstractFigureClassLibrary
+
+namespace Paint
 {
     [Serializable]
-    public class Square : Rectangle 
+    public class Square : Figure
     {
         private int length;
         public Square()

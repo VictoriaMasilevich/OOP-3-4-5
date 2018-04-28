@@ -3,41 +3,49 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using AbstractFigureClassLibrary;
 
-namespace AbstractFigureClassLibrary
+
+namespace Paint
 {
-    class CreatorList: Dictionary<int, Creator>
+    class CreatorList : Dictionary<int, Creator>
     {
-        private int currentId = 0;
-
         public Figure GetFigure(int figureID)
         {
             switch (figureID)
             {
                 case 0:
-                    AddCreator(new CreatorLine());
+                    figureID = 0;
+                    AddCreator(figureID, new CreatorLine());
                     break;
                 case 1:
-                    AddCreator(new CreatorSquare());
+                    figureID = 1;
+                    AddCreator(figureID, new CreatorSquare());
                     break;
                 case 2:
-                    AddCreator(new CreatorRectangle());
+                    figureID = 2;
+                    AddCreator(figureID, new CreatorCircle());
                     break;
                 case 3:
-                    AddCreator(new CreatorEllipse());
-                    break;
-                default:
-                    AddCreator(new CreatorLine());
+                    figureID = 3;
+                    AddCreator(figureID, new CreatorEllipse());
                     break;
             }
-            return this[figureID].CreateFigure();
+            Figure ret = this[figureID].CreateFigure();
+            RemCreator(figureID);
+            return ret;
+            
         }
 
-        public int AddCreator(Creator creator)
+        public int AddCreator(int figureID, Creator creator)
         {
-            this.Add(currentId, creator);
-            return currentId++;
+            this.Add(figureID, creator);
+            return figureID;
+        }
+
+        public int RemCreator(int figureID)
+        {
+            this.Remove(figureID);
+            return figureID;
         }
     }
 }
