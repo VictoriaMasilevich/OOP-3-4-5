@@ -25,13 +25,22 @@ namespace Paint
         public BinaryFormatter formatter;
         private Point currentPoint;
         private List<Point> MovingPoints;
-        private CreatorList creatorList = new CreatorList();
+        //private CreatorList creatorList = new CreatorList();
         private int buttonLocationX;
         private int buttonLocationY;
+        private readonly string pluginPath = Path.Combine(Directory.GetCurrentDirectory(), "Plugins");
 
         public Form1()
         {
-            InitializeComponent(); 
+            InitializeComponent();
+            try
+            {
+                LoadPlugin();
+            }
+            catch
+            {
+                MessageBox.Show("Ошибка загрузки плагина.");
+            }
             Figures = new List<Figure>();
             MovingPoints = new List<Point>();
             pen = new Pen(Color.Black, 1);
@@ -40,7 +49,37 @@ namespace Paint
             buttonLocationY = LineButton.Location.Y;
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        public void LoadPlugin()
+        {
+            DirectoryInfo pluginDirectory = new DirectoryInfo(pluginPath);
+            if (!pluginDirectory.Exists) pluginDirectory.Create();
+
+            var pluginFiles = Directory.GetFiles(pluginPath, "*.dll");
+            foreach (var file in pluginFiles)
+            {
+                Assembly loaded = Assembly.LoadFile(file);
+                Type[] types = loaded.GetTypes();
+
+                foreach (Type type in types)
+                {
+                    if (type.IsSubclassOf(typeof(Figure)))
+                    {
+                        var plugin = loaded.CreateInstance(type.FullName) as Figure;
+                        GenerateButtons();
+                    }
+                }
+            }
+        }
+
+        void GenerateButtons()
+        {
+            LineButton.Enabled = true;
+            SquareButton.Enabled = true;
+            CircleButton.Enabled = true;
+            EllipseButton.Enabled = true;
+        }
+
+        private void Form1_Load(object sender, EventArgs e) 
         {
             DoubleBuffered = true;
             pictureBoxColor.BackColor = Color.Black;
@@ -48,10 +87,13 @@ namespace Paint
             pen.Width = trackBarPenWidth.Value;
             labelPenWidth.Text = "Толщина линий: " + trackBarPenWidth.Value.ToString();
             buttonSerialize.Enabled = false;
-            buttonDeserialize.Enabled = true;
+            LineButton.Enabled = false;
+            SquareButton.Enabled = false;
+            CircleButton.Enabled = false;
+            EllipseButton.Enabled = false;
         }
                               
-        private void DrawAll()
+        private void DrawAll()  
         {
             for (int i = 0; i < Figures.Count; i++)
             {
@@ -61,7 +103,7 @@ namespace Paint
 
         private void btnFigure_MouseDown(object sender, MouseEventArgs e)
         {
-            figure = creatorList.GetFigure(int.Parse((sender as Button).Tag.ToString()));
+            //figure = creatorList.GetFigure(int.Parse((sender as Button).Tag.ToString()));
         }
 
         private void buttonChangeColor_Click(object sender, EventArgs e)
@@ -138,7 +180,14 @@ namespace Paint
                 {
                     using (var fStream = new FileStream(saveFileDialog1.FileName, FileMode.Create, FileAccess.Write, FileShare.None))
                     {
-                        formatter.Serialize(fStream, Figures);
+                        try
+                        {
+                            formatter.Serialize(fStream, Figures);
+                        }
+                        catch
+                        {
+                            MessageBox.Show("Ошибка сериализации", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
                     }
                 }
             }
@@ -152,11 +201,25 @@ namespace Paint
             {
                 if (openFileDialog1.FileName != "")
                 {
-                    using (var fStream = File.OpenRead(openFileDialog1.FileName))
+                    var fStream = File.OpenRead(openFileDialog1.FileName);
                     {
+                        try
+                        {
                             Figures = new List<Figure>();
                             Figures = (List<Figure>)formatter.Deserialize(fStream);
                             DrawAll();
+                        }
+                        catch
+                        {
+                            MessageBox.Show("Ошибка десериализации", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        finally
+                        {
+                            if (fStream != null)
+                            {
+                                fStream.Dispose();
+                            }
+                        }
                     }
                 }
             }

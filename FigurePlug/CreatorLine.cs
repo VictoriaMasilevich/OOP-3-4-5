@@ -3,18 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Paint;
 
-namespace Paint
+namespace FigurePlug
 {
-    public class CreatorCircle: CreatorEllipse
+    class CreatorLine: Creator
     {
-        public CreatorCircle()
-        {
-            Name = "Круг";
-        }
         public override Figure CreateFigure()
         {
-            return new Circle();
+            return new Line();
         }
     }
 }

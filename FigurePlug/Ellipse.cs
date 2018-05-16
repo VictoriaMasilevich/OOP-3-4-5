@@ -4,31 +4,27 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
+using Paint;
 
-
-namespace Paint
+namespace FigurePlug
 {
     [Serializable]
     public class Ellipse : Figure
     {
-        public int CenterX;
-        public int CenterY;
-
-        public Ellipse()
+        public override Figure CreateFigure()
         {
+            return new Ellipse();
         }
 
         public override void GetParams()
         {
             base.GetParams();
-            CenterX = StartX + ((EndX - StartX) / 2);
-            CenterY = StartY + ((EndY - StartY) / 2);
         }
 
         public override void Draw(Graphics g, Color color)
         {
             GetParams();
-            g.DrawEllipse(new Pen(color, widthParams), StartX, StartY, (EndX-StartX), (EndY-StartY));
+            g.DrawEllipse(new Pen(color, widthParams), StartX, StartY, (EndX - StartX), (EndY - StartY));
         }
     }
 }

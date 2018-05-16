@@ -1,26 +1,27 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
+using Paint;
 
-
-
-namespace Paint
+namespace FigurePlug
 {
     [Serializable]
     public class Square : Figure
     {
         private int length;
-        public Square()
+
+        public override Figure CreateFigure()
         {
+            return new Square();
         }
 
         public override void GetParams()
         {
             base.GetParams();
-            length = (Math.Abs(StartX - EndX) + Math.Abs(StartY - EndY))/2;
+            length = (Math.Abs(StartX - EndX) + Math.Abs(StartY - EndY)) / 2;
         }
 
         public override void Draw(Graphics g, Color color)
