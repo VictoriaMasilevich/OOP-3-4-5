@@ -56,5 +56,12 @@ namespace Paint
         }
 
         public abstract void Draw(Graphics graphics, Color color);
+
+        public CheckedListBox GenerateButtons(Type type, CheckedListBox CheckedListBox1)
+        {
+            CheckedListBox1.Items.Add(type);
+            return CheckedListBox1;
+        }
+
     }
 }

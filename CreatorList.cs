@@ -7,27 +7,31 @@ using Paint;
 
 namespace FigurePlug
 {
-    class CreatorList : Dictionary<int, Creator>
+    public class CreatorList : Dictionary<int, Figure>
     {
+        public CreatorList()
+        {
+        }
+
         public Figure GetFigure(int figureID)
         {
             switch (figureID)
             {
                 case 0:
                     figureID = 0;
-                    AddCreator(figureID, new CreatorLine());
+                    AddCreator(figureID, new Circle());
                     break;
                 case 1:
                     figureID = 1;
-                    AddCreator(figureID, new CreatorSquare());
+                    AddCreator(figureID, new Ellipse());
                     break;
                 case 2:
                     figureID = 2;
-                    AddCreator(figureID, new CreatorCircle());
+                    AddCreator(figureID, new Line());
                     break;
                 case 3:
                     figureID = 3;
-                    AddCreator(figureID, new CreatorEllipse());
+                    AddCreator(figureID, new Square());
                     break;
             }
             Figure ret = this[figureID].CreateFigure();
@@ -36,9 +40,9 @@ namespace FigurePlug
             
         }
 
-        public int AddCreator(int figureID, Creator creator)
+        public int AddCreator(int figureID, Figure figure)
         {
-            this.Add(figureID, creator);
+            this.Add(figureID, figure.CreateFigure());
             return figureID;
         }
 

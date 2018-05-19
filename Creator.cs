@@ -9,6 +9,7 @@ namespace FigurePlug
 {
     public abstract class Creator
     {
+        public string Name { get; set; }
         public abstract Figure CreateFigure(); 
     }
 }

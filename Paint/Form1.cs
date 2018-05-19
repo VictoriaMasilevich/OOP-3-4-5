@@ -25,28 +25,24 @@ namespace Paint
         public BinaryFormatter formatter;
         private Point currentPoint;
         private List<Point> MovingPoints;
-        //private CreatorList creatorList = new CreatorList();
         private int buttonLocationX;
         private int buttonLocationY;
         private readonly string pluginPath = Path.Combine(Directory.GetCurrentDirectory(), "Plugins");
+        private object creatorList;
+        private Type t;
 
         public Form1()
         {
             InitializeComponent();
-            try
-            {
-                LoadPlugin();
-            }
-            catch
-            {
-                MessageBox.Show("Ошибка загрузки плагина.");
-            }
             Figures = new List<Figure>();
             MovingPoints = new List<Point>();
             pen = new Pen(Color.Black, 1);
             graphics = pictureBox1.CreateGraphics();
-            buttonLocationX = LineButton.Location.X;
-            buttonLocationY = LineButton.Location.Y;
+        }
+
+        private void Selectt(Figure figure1)
+        {
+            figure = figure1;
         }
 
         public void LoadPlugin()
@@ -65,18 +61,20 @@ namespace Paint
                     if (type.IsSubclassOf(typeof(Figure)))
                     {
                         var plugin = loaded.CreateInstance(type.FullName) as Figure;
-                        GenerateButtons();
+                        plugin.GenerateButtons(type, CheckedListBox1);
+                        CheckedListBox1.ItemCheck += (sender, e) => Selectt(plugin.CreateFigure());
                     }
                 }
+                try
+                {
+                    t = loaded.GetType("FigurePlug.CreatorList", true, true);
+                    creatorList = Activator.CreateInstance(t);
+                }
+                catch
+                {
+                    MessageBox.Show("Ошибкааааа");
+                }
             }
-        }
-
-        void GenerateButtons()
-        {
-            LineButton.Enabled = true;
-            SquareButton.Enabled = true;
-            CircleButton.Enabled = true;
-            EllipseButton.Enabled = true;
         }
 
         private void Form1_Load(object sender, EventArgs e) 
@@ -86,11 +84,6 @@ namespace Paint
             trackBarPenWidth.Value = 1;
             pen.Width = trackBarPenWidth.Value;
             labelPenWidth.Text = "Толщина линий: " + trackBarPenWidth.Value.ToString();
-            buttonSerialize.Enabled = false;
-            LineButton.Enabled = false;
-            SquareButton.Enabled = false;
-            CircleButton.Enabled = false;
-            EllipseButton.Enabled = false;
         }
                               
         private void DrawAll()  
@@ -103,7 +96,8 @@ namespace Paint
 
         private void btnFigure_MouseDown(object sender, MouseEventArgs e)
         {
-            //figure = creatorList.GetFigure(int.Parse((sender as Button).Tag.ToString()));
+            MethodInfo method = t.GetMethod("GetFigure");
+            figure = (Figure)method.Invoke(creatorList, new object[] { int.Parse((sender as Button).Tag.ToString()) });
         }
 
         private void buttonChangeColor_Click(object sender, EventArgs e)
@@ -129,7 +123,7 @@ namespace Paint
                 figure.colorParams = pen.Color;
                 figure.widthParams = pen.Width;
                 Figures.Add(figure);
-                buttonSerialize.Enabled = true;
+
             }
         }
 
@@ -166,67 +160,21 @@ namespace Paint
             graphics.Clear(Color.White);
         }
 
-        private void buttonSerialize_Click(object sender, EventArgs e)
+        private void PluginButton_Click(object sender, EventArgs e)
         {
-            if (Figures.Count == 0)
+            try
             {
-                MessageBox.Show("Нечего сериалиализовывать", "Ошибка", MessageBoxButtons.OK);
+                LoadPlugin();
             }
-            else
+            catch
             {
-                var formatter = new BinaryFormatter();
-                saveFileDialog1.ShowDialog();
-                if (saveFileDialog1.FileName != "")
-                {
-                    using (var fStream = new FileStream(saveFileDialog1.FileName, FileMode.Create, FileAccess.Write, FileShare.None))
-                    {
-                        try
-                        {
-                            formatter.Serialize(fStream, Figures);
-                        }
-                        catch
-                        {
-                            MessageBox.Show("Ошибка сериализации", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
-                    }
-                }
+                MessageBox.Show("Ошибка загрузки плагина.");
             }
         }
 
-        private void buttonDeserialize_Click(object sender, EventArgs e)
+        private void CheckedListBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var formatter = new BinaryFormatter();
-            openFileDialog1.ShowDialog();
-            try
-            {
-                if (openFileDialog1.FileName != "")
-                {
-                    var fStream = File.OpenRead(openFileDialog1.FileName);
-                    {
-                        try
-                        {
-                            Figures = new List<Figure>();
-                            Figures = (List<Figure>)formatter.Deserialize(fStream);
-                            DrawAll();
-                        }
-                        catch
-                        {
-                            MessageBox.Show("Ошибка десериализации", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
-                        finally
-                        {
-                            if (fStream != null)
-                            {
-                                fStream.Dispose();
-                            }
-                        }
-                    }
-                }
-            }
-            catch (FileNotFoundException)
-            {
-                MessageBox.Show("Файл не найден", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            //Selectt(plugin.CreateFigure());
         }
     }
 }

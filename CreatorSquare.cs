@@ -7,11 +7,15 @@ using Paint;
 
 namespace FigurePlug
 {
-    public class CreatorEllipse: Creator
+    public class CreatorSquare: Creator
     {
+        public CreatorSquare()
+        {
+            Name = "Квадрат";
+        }
         public override Figure CreateFigure()
         {
-            return new Ellipse();
+            return new Square();
         }
     }
 }

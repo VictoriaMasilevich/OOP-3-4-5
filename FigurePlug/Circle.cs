@@ -12,6 +12,7 @@ namespace FigurePlug
     public class Circle : Ellipse
     {
         private int diameter;
+
         public override Figure CreateFigure()
         {
             return new Circle();
