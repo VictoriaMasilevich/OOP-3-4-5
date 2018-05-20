@@ -1,17 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Drawing.Drawing2D;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Windows.Input;
 using System.IO;
-using System.Runtime.Serialization;
-using System.Runtime.Serialization.Formatters.Binary;
+using AbstractClassLibrary;
 using System.Reflection;
 
 namespace Paint
@@ -22,57 +14,92 @@ namespace Paint
         private List<Figure> Figures;
         private Figure figure;
         private Pen pen;
-        public BinaryFormatter formatter;
         private Point currentPoint;
         private List<Point> MovingPoints;
-        private int buttonLocationX;
-        private int buttonLocationY;
-        private readonly string pluginPath = Path.Combine(Directory.GetCurrentDirectory(), "Plugins");
-        private object creatorList;
-        private Type t;
+        private readonly string pluginPath = Path.Combine(Directory.GetCurrentDirectory(), "FigurePlugins");
+        FigureCreatorList FigureCreatorList = new FigureCreatorList();
+        FigureCreator FigureCreator;
+        public bool isClicked = false;
+        FigureList FigureList = new FigureList();
+
+        public struct MenuItemInfo
+        {
+            public string figureName;
+            public string creatorType;
+            public FigureCreator FigureCreator;
+        }
 
         public Form1()
         {
+            try
+            {
+                LoadPlugin();
+            }
+            catch
+            {
+                MessageBox.Show("Ошибка загрузки плагина.");
+            }
             InitializeComponent();
+            string[] FigureNames = new string[] { "Line", "Square", "Rectangle", "Circle", "Ellipse" };
+            List<MenuItemInfo> itemsList = new List<MenuItemInfo>();
+            foreach (var creator in FigureCreatorList.Creators)
+            {
+                foreach (var figurename in FigureNames)
+                {
+                    if ((creator).ToString().Contains(figurename))
+                    {
+                        itemsList.Add(new MenuItemInfo
+                        {
+                            figureName = figurename,
+                            creatorType = (creator).ToString(),
+                            FigureCreator = creator
+                        });
+                        break;
+                    }
+                }
+            }
+            ToolStripMenuItem menuItem;
+            foreach (MenuItemInfo items in itemsList)
+            {
+                menuItem = new ToolStripMenuItem(items.figureName)
+                {
+                    Tag = items.FigureCreator
+                };
+                menuItem.Click += new EventHandler(MenuItemFigureClickHandler);
+                figuresToolStripMenuItem.DropDownItems.Add(menuItem);
+            }
             Figures = new List<Figure>();
             MovingPoints = new List<Point>();
             pen = new Pen(Color.Black, 1);
             graphics = pictureBox1.CreateGraphics();
         }
 
-        private void Selectt(Figure figure1)
-        {
-            figure = figure1;
-        }
-
         public void LoadPlugin()
         {
             DirectoryInfo pluginDirectory = new DirectoryInfo(pluginPath);
             if (!pluginDirectory.Exists) pluginDirectory.Create();
-
             var pluginFiles = Directory.GetFiles(pluginPath, "*.dll");
             foreach (var file in pluginFiles)
             {
-                Assembly loaded = Assembly.LoadFile(file);
-                Type[] types = loaded.GetTypes();
-
-                foreach (Type type in types)
-                {
-                    if (type.IsSubclassOf(typeof(Figure)))
-                    {
-                        var plugin = loaded.CreateInstance(type.FullName) as Figure;
-                        plugin.GenerateButtons(type, CheckedListBox1);
-                        CheckedListBox1.ItemCheck += (sender, e) => Selectt(plugin.CreateFigure());
-                    }
-                }
                 try
                 {
-                    t = loaded.GetType("FigurePlug.CreatorList", true, true);
-                    creatorList = Activator.CreateInstance(t);
+                    Assembly assembly = Assembly.LoadFrom(file);
+                    Type[] types = assembly.GetExportedTypes();
+
+                    foreach (Type type in types)
+                    {
+                        if (type.IsClass && type.GetTypeInfo().BaseType == typeof(FigureCreator) && !type.IsAbstract)
+                        {
+                            var plugin = Activator.CreateInstance(type);
+                            FigureCreatorList.Creators.Add((FigureCreator)plugin);
+                        }
+                    }
                 }
-                catch
+                catch (Exception ex)
                 {
-                    MessageBox.Show("Ошибкааааа");
+                    MessageBoxButtons button = MessageBoxButtons.OK;
+                    string caption = "Error";
+                    MessageBox.Show(ex.Message, caption, button);
                 }
             }
         }
@@ -94,10 +121,12 @@ namespace Paint
             }
         }
 
-        private void btnFigure_MouseDown(object sender, MouseEventArgs e)
+        private void MenuItemFigureClickHandler(object sender, EventArgs e)
         {
-            MethodInfo method = t.GetMethod("GetFigure");
-            figure = (Figure)method.Invoke(creatorList, new object[] { int.Parse((sender as Button).Tag.ToString()) });
+            ToolStripMenuItem clickedItem = (ToolStripMenuItem)sender;
+
+            FigureCreator = (FigureCreator)clickedItem.Tag;
+            figure = FigureCreator.Create();
         }
 
         private void buttonChangeColor_Click(object sender, EventArgs e)
@@ -123,7 +152,6 @@ namespace Paint
                 figure.colorParams = pen.Color;
                 figure.widthParams = pen.Width;
                 Figures.Add(figure);
-
             }
         }
 
@@ -150,31 +178,14 @@ namespace Paint
                 figure.Draw(graphics, figure.colorParams);
                 DrawAll();
             }
-            figure = null;
-            MovingPoints.Clear(); 
+            //figure = null;
+            MovingPoints.Clear();
         }
 
         private void buttonClear_Click(object sender, EventArgs e)
         {
             Figures.Clear();
             graphics.Clear(Color.White);
-        }
-
-        private void PluginButton_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                LoadPlugin();
-            }
-            catch
-            {
-                MessageBox.Show("Ошибка загрузки плагина.");
-            }
-        }
-
-        private void CheckedListBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            //Selectt(plugin.CreateFigure());
         }
     }
 }

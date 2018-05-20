@@ -29,41 +29,27 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.buttonChangeColor = new System.Windows.Forms.Button();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.pictureBoxColor = new System.Windows.Forms.PictureBox();
-            this.CheckedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.trackBarPenWidth = new System.Windows.Forms.TrackBar();
             this.labelPenWidth = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.buttonClear = new System.Windows.Forms.Button();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.PluginButton = new System.Windows.Forms.Button();
-            this.groupBox1.SuspendLayout();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.figuresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxColor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarPenWidth)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.CheckedListBox1);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.groupBox1.Location = new System.Drawing.Point(9, 10);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox1.Size = new System.Drawing.Size(341, 191);
-            this.groupBox1.TabIndex = 6;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Выбор фигуры";
             // 
             // buttonChangeColor
             // 
             this.buttonChangeColor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonChangeColor.Location = new System.Drawing.Point(14, 235);
+            this.buttonChangeColor.Location = new System.Drawing.Point(9, 235);
             this.buttonChangeColor.Margin = new System.Windows.Forms.Padding(2);
             this.buttonChangeColor.Name = "buttonChangeColor";
             this.buttonChangeColor.Size = new System.Drawing.Size(166, 34);
@@ -80,14 +66,6 @@
             this.pictureBoxColor.Size = new System.Drawing.Size(166, 34);
             this.pictureBoxColor.TabIndex = 8;
             this.pictureBoxColor.TabStop = false;
-            // 
-            // CheckedListBox1
-            // 
-            this.CheckedListBox1.Location = new System.Drawing.Point(14, 21);
-            this.CheckedListBox1.Name = "CheckedListBox1";
-            this.CheckedListBox1.Size = new System.Drawing.Size(188, 94);
-            this.CheckedListBox1.TabIndex = 0;
-            this.CheckedListBox1.SelectedIndexChanged += new System.EventHandler(this.CheckedListBox1_SelectedIndexChanged);
             // 
             // trackBarPenWidth
             // 
@@ -131,7 +109,7 @@
             this.buttonClear.Location = new System.Drawing.Point(9, 334);
             this.buttonClear.Margin = new System.Windows.Forms.Padding(2);
             this.buttonClear.Name = "buttonClear";
-            this.buttonClear.Size = new System.Drawing.Size(166, 68);
+            this.buttonClear.Size = new System.Drawing.Size(341, 68);
             this.buttonClear.TabIndex = 13;
             this.buttonClear.Text = "Очистить";
             this.buttonClear.UseVisualStyleBackColor = true;
@@ -141,17 +119,29 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
-            // PluginButton
+            // menuStrip1
             // 
-            this.PluginButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.PluginButton.Location = new System.Drawing.Point(184, 334);
-            this.PluginButton.Margin = new System.Windows.Forms.Padding(2);
-            this.PluginButton.Name = "PluginButton";
-            this.PluginButton.Size = new System.Drawing.Size(166, 66);
-            this.PluginButton.TabIndex = 16;
-            this.PluginButton.Text = "Плагин";
-            this.PluginButton.UseVisualStyleBackColor = true;
-            this.PluginButton.Click += new System.EventHandler(this.PluginButton_Click);
+            this.menuStrip1.AutoSize = false;
+            this.menuStrip1.BackColor = System.Drawing.Color.Gainsboro;
+            this.menuStrip1.Dock = System.Windows.Forms.DockStyle.None;
+            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(0);
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(40, 40);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.figuresToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(81, 25);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(212, 106);
+            this.menuStrip1.TabIndex = 1;
+            // 
+            // figuresToolStripMenuItem
+            // 
+            this.figuresToolStripMenuItem.AutoSize = false;
+            this.figuresToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.figuresToolStripMenuItem.ForeColor = System.Drawing.Color.RosyBrown;
+            this.figuresToolStripMenuItem.Name = "figuresToolStripMenuItem";
+            this.figuresToolStripMenuItem.Size = new System.Drawing.Size(200, 80);
+            this.figuresToolStripMenuItem.Text = "Figures";
+            this.figuresToolStripMenuItem.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal;
             // 
             // Form1
             // 
@@ -159,14 +149,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.Linen;
             this.ClientSize = new System.Drawing.Size(995, 411);
-            this.Controls.Add(this.PluginButton);
             this.Controls.Add(this.buttonClear);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.labelPenWidth);
             this.Controls.Add(this.trackBarPenWidth);
             this.Controls.Add(this.pictureBoxColor);
             this.Controls.Add(this.buttonChangeColor);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
@@ -177,17 +166,18 @@
             this.Text = "Paint";
             this.TransparencyKey = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.Load += new System.EventHandler(this.Form1_Load);
-            this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxColor)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarPenWidth)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.Button buttonChangeColor;
         private System.Windows.Forms.ColorDialog colorDialog1;
         private System.Windows.Forms.PictureBox pictureBoxColor;
@@ -197,8 +187,7 @@
         private System.Windows.Forms.Button buttonClear;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
-        private System.Windows.Forms.Button PluginButton;
-        private System.Windows.Forms.CheckedListBox CheckedListBox1;
+        private System.Windows.Forms.ToolStripMenuItem figuresToolStripMenuItem;
     }
 }
 
