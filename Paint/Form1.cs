@@ -1,10 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Windows;
+using System.Windows.Controls;
 using System.Drawing;
 using System.Windows.Forms;
 using System.IO;
+using System.Text;
 using AbstractClassLibrary;
 using System.Reflection;
+using System.Threading;
+using System.Xml;
+using System.Globalization;
+using System.ComponentModel;
 
 namespace Paint
 {
@@ -21,7 +28,9 @@ namespace Paint
         FigureCreator FigureCreator;
         public bool isClicked = false;
         FigureList FigureList = new FigureList();
-
+        public readonly string russian = "ru";
+        public readonly string english = "en";
+        public string Lang { get; set; }
         public struct MenuItemInfo
         {
             public string figureName;
@@ -39,6 +48,8 @@ namespace Paint
             {
                 MessageBox.Show("Ошибка загрузки плагина.");
             }
+            LoadLanguageConfig();
+            SetLanguage();
             InitializeComponent();
             string[] FigureNames = new string[] { "Line", "Square", "Rectangle", "Circle", "Ellipse" };
             List<MenuItemInfo> itemsList = new List<MenuItemInfo>();
@@ -61,13 +72,24 @@ namespace Paint
             ToolStripMenuItem menuItem;
             foreach (MenuItemInfo items in itemsList)
             {
-                menuItem = new ToolStripMenuItem(items.figureName)
+                try
                 {
-                    Tag = items.FigureCreator
-                };
-                menuItem.Click += new EventHandler(MenuItemFigureClickHandler);
-                figuresToolStripMenuItem.DropDownItems.Add(menuItem);
-            }
+                    menuItem = new ToolStripMenuItem()
+                    {
+                        Tag = items.FigureCreator,
+                        BackgroundImage = Bitmap.FromFile(Directory.GetCurrentDirectory() + "\\img\\" + items.figureName + ".bmp"),
+                        BackgroundImageLayout = ImageLayout.Stretch
+                    };
+                    menuItem.Click += new EventHandler(MenuItemFigureClickHandler);
+                    figuresToolStripMenuItem.DropDownItems.Add(menuItem);
+                }
+                catch
+                {
+                    MessageBox.Show("Проверьте наличие картинок");
+                }
+        }
+
+
             Figures = new List<Figure>();
             MovingPoints = new List<Point>();
             pen = new Pen(Color.Black, 1);
@@ -110,7 +132,6 @@ namespace Paint
             pictureBoxColor.BackColor = Color.Black;
             trackBarPenWidth.Value = 1;
             pen.Width = trackBarPenWidth.Value;
-            labelPenWidth.Text = "Толщина линий: " + trackBarPenWidth.Value.ToString();
         }
                               
         private void DrawAll()  
@@ -139,7 +160,6 @@ namespace Paint
         private void trackBar1_Scroll(object sender, EventArgs e)
         {
             pen.Width = trackBarPenWidth.Value;
-            labelPenWidth.Text = "Толщина линий: " + trackBarPenWidth.Value.ToString();
         }
 
         private void pictureBox1_MouseDown(object sender, MouseEventArgs e)
@@ -186,6 +206,76 @@ namespace Paint
         {
             Figures.Clear();
             graphics.Clear(Color.White);
+        }
+
+        public void LoadLanguageConfig()
+        {
+            var doc = new XmlDocument();
+            try
+            {
+                doc.Load("config.xml");
+                XmlElement elem = doc.DocumentElement["AppLang"];
+                Lang = elem.InnerText;
+                doc.Save("config.xml");
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+                Lang = english;
+            }
+        }
+
+        private void SetLanguage()
+        {
+            try
+            {
+                Thread.CurrentThread.CurrentUICulture = new CultureInfo(Lang);
+            }
+            catch (CultureNotFoundException e)
+            {
+                MessageBox.Show(e.Message);
+                Lang = english;
+                Thread.CurrentThread.CurrentUICulture = new CultureInfo(Lang);
+            }
+        }
+
+        public void ChangeConfig()
+        {
+            var doc = new XmlDocument();
+            try
+            {
+                doc.Load("сonfig.xml");
+            }
+            catch
+            {
+                XmlTextWriter textWritter = new XmlTextWriter("config.xml", Encoding.UTF8);
+                textWritter.WriteStartDocument();
+                textWritter.WriteStartElement("head");
+                textWritter.WriteEndElement();
+                textWritter.Close();
+                doc.Load("config.xml");
+            }
+
+            XmlNode AppLang = doc.CreateElement("AppLang");
+            doc.DocumentElement.AppendChild(AppLang);
+            AppLang.InnerText = Lang;
+            doc.Save("config.xml");
+        }
+
+        private void russianToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Lang = russian;
+            ChangeConfig();
+            System.Diagnostics.Process.Start(Application.ExecutablePath);
+            this.Close();
+        }
+
+        private void englishToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Lang = english;
+            ChangeConfig();
+            System.Diagnostics.Process.Start(Application.ExecutablePath);
+            this.Close();
         }
     }
 }
