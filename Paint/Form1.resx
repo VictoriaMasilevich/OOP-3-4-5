@@ -565,15 +565,24 @@
         177Ev39AQBCAFyFJbSB/QMDTR/QC//y1bbXP9vsEBAQ8Q/z/ARZoc8qnl7eyAAAAAElFTkSuQmCC
 </value>
   </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="labelPenWidth.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
   <data name="pictureBoxColor.Location" type="System.Drawing.Point, System.Drawing">
     <value>189, 92</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="pictureBox1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>364, 55</value>
+  </data>
   <data name="menuStrip1.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
   <data name="englishToolStripMenuItem.Text" xml:space="preserve">
     <value>English</value>
+  </data>
+  <data name="&gt;&gt;belorussianToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;buttonChangeColor.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -581,8 +590,8 @@
   <data name="&gt;&gt;pictureBoxColor.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;pictureBoxColor.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;белорусскийToolStripMenuItem.Name" xml:space="preserve">
+    <value>белорусскийToolStripMenuItem</value>
   </data>
   <data name="buttonClear.Size" type="System.Drawing.Size, System.Drawing">
     <value>341, 109</value>
@@ -591,7 +600,7 @@
   <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
   </data>
-  <data name="&gt;&gt;englishToolStripMenuItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;белыйToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;buttonChangeColor.Name" xml:space="preserve">
@@ -599,6 +608,9 @@
   </data>
   <data name="&gt;&gt;pictureBoxColor.Name" xml:space="preserve">
     <value>pictureBoxColor</value>
+  </data>
+  <data name="&gt;&gt;blackToolStripMenuItem.Name" xml:space="preserve">
+    <value>blackToolStripMenuItem</value>
   </data>
   <data name="langToolStripMenuItem.AutoSize" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -624,6 +636,12 @@
   <data name="&gt;&gt;pictureBox1.Name" xml:space="preserve">
     <value>pictureBox1</value>
   </data>
+  <data name="&gt;&gt;backcolorToolStripMenuItem.Name" xml:space="preserve">
+    <value>backcolorToolStripMenuItem</value>
+  </data>
+  <data name="белорусскийToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>204, 30</value>
+  </data>
   <data name="buttonChangeColor.Location" type="System.Drawing.Point, System.Drawing">
     <value>19, 92</value>
   </data>
@@ -636,14 +654,23 @@
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>
   </data>
-  <data name="&gt;&gt;saveFileDialog1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.SaveFileDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;pictureBoxColor.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;colorDialog1.Name" xml:space="preserve">
-    <value>colorDialog1</value>
+  <data name="&gt;&gt;russianToolStripMenuItem.Name" xml:space="preserve">
+    <value>russianToolStripMenuItem</value>
+  </data>
+  <data name="фонToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>64, 38</value>
   </data>
   <data name="&gt;&gt;pictureBox1.ZOrder" xml:space="preserve">
     <value>1</value>
+  </data>
+  <data name="&gt;&gt;белорусскийToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="buttonChangeColor.Text" xml:space="preserve">
     <value>Изменить цвет</value>
@@ -651,14 +678,14 @@
   <data name="trackBarPenWidth.Size" type="System.Drawing.Size, System.Drawing">
     <value>336, 45</value>
   </data>
-  <data name="&gt;&gt;menuStrip1.ZOrder" xml:space="preserve">
-    <value>6</value>
+  <data name="blackToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>159, 30</value>
   </data>
   <data name="langToolStripMenuItem.Text" xml:space="preserve">
     <value>Language</value>
   </data>
-  <data name="labelPenWidth.Text" xml:space="preserve">
-    <value>Толщина линий</value>
+  <data name="&gt;&gt;backcolorToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="buttonClear.Text" xml:space="preserve">
     <value>Очистить</value>
@@ -672,8 +699,14 @@
   <data name="labelPenWidth.Size" type="System.Drawing.Size, System.Drawing">
     <value>112, 17</value>
   </data>
-  <data name="&gt;&gt;russianToolStripMenuItem.Name" xml:space="preserve">
-    <value>russianToolStripMenuItem</value>
+  <data name="&gt;&gt;colorDialog1.Name" xml:space="preserve">
+    <value>colorDialog1</value>
+  </data>
+  <data name="&gt;&gt;blackToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;белыйToolStripMenuItem.Name" xml:space="preserve">
+    <value>белыйToolStripMenuItem</value>
   </data>
   <data name="trackBarPenWidth.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
@@ -687,11 +720,11 @@
   <data name="russianToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>184, 30</value>
   </data>
+  <data name="menuStrip1.AutoSize" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <data name="belarussianToolStripMenuItem.Text" xml:space="preserve">
     <value>Belarussian</value>
-  </data>
-  <data name="&gt;&gt;pictureBox1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="menuStrip1.Size" type="System.Drawing.Size, System.Drawing">
     <value>995, 42</value>
@@ -711,17 +744,29 @@
   <data name="&gt;&gt;labelPenWidth.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
+  <data name="russianToolStripMenuItem.Text" xml:space="preserve">
+    <value>Russian</value>
+  </data>
   <data name="&gt;&gt;openFileDialog1.Name" xml:space="preserve">
     <value>openFileDialog1</value>
   </data>
   <data name="&gt;&gt;buttonClear.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;ToolStripMenuItem.Name" xml:space="preserve">
+    <value>ToolStripMenuItem</value>
+  </data>
   <data name="&gt;&gt;menuStrip1.Type" xml:space="preserve">
     <value>System.Windows.Forms.MenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="whiteToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>159, 30</value>
+  </data>
   <data name="labelPenWidth.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 10.2pt</value>
+  </data>
+  <data name="ToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>204, 30</value>
   </data>
   <data name="figuresToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>94, 40</value>
@@ -759,6 +804,15 @@
   <data name="&gt;&gt;buttonClear.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="&gt;&gt;фонToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="belorussianToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>204, 30</value>
+  </data>
+  <data name="&gt;&gt;menuStrip1.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
   <data name="labelPenWidth.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
   </data>
@@ -774,11 +828,17 @@
   <data name="figuresToolStripMenuItem.AutoSize" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
+  <data name="backcolorToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>64, 38</value>
+  </data>
+  <data name="&gt;&gt;ToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="belarussianToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>184, 30</value>
   </data>
-  <data name="&gt;&gt;buttonClear.Name" xml:space="preserve">
-    <value>buttonClear</value>
+  <data name="&gt;&gt;черныйToolStripMenuItem.Name" xml:space="preserve">
+    <value>черныйToolStripMenuItem</value>
   </data>
   <data name="figuresToolStripMenuItem.Text" xml:space="preserve">
     <value>Figures</value>
@@ -807,14 +867,20 @@
   <data name="pictureBox1.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
   </data>
+  <data name="&gt;&gt;saveFileDialog1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SaveFileDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;whiteToolStripMenuItem.Name" xml:space="preserve">
+    <value>whiteToolStripMenuItem</value>
+  </data>
   <data name="menuStrip1.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
   <data name="buttonChangeColor.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
   </data>
-  <data name="pictureBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>364, 55</value>
+  <data name="&gt;&gt;englishToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;buttonChangeColor.ZOrder" xml:space="preserve">
     <value>5</value>
@@ -825,8 +891,8 @@
   <data name="&gt;&gt;pictureBoxColor.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <data name="russianToolStripMenuItem.Text" xml:space="preserve">
-    <value>Russian</value>
+  <data name="&gt;&gt;belorussianToolStripMenuItem.Name" xml:space="preserve">
+    <value>belorussianToolStripMenuItem</value>
   </data>
   <data name="&gt;&gt;labelPenWidth.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -837,20 +903,35 @@
   <data name="&gt;&gt;trackBarPenWidth.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="menuStrip1.AutoSize" type="System.Boolean, mscorlib">
-    <value>False</value>
+  <data name="&gt;&gt;whiteToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="buttonClear.Location" type="System.Drawing.Point, System.Drawing">
     <value>14, 293</value>
   </data>
-  <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;фонToolStripMenuItem.Name" xml:space="preserve">
+    <value>фонToolStripMenuItem</value>
   </data>
-  <data name="labelPenWidth.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="&gt;&gt;buttonClear.Name" xml:space="preserve">
+    <value>buttonClear</value>
+  </data>
+  <data name="labelPenWidth.Text" xml:space="preserve">
+    <value>Толщина линий</value>
+  </data>
+  <data name="&gt;&gt;pictureBox1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;черныйToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="черныйToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>159, 30</value>
   </data>
   <data name="&gt;&gt;saveFileDialog1.Name" xml:space="preserve">
     <value>saveFileDialog1</value>
+  </data>
+  <data name="белыйToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>159, 30</value>
   </data>
   <data name="&gt;&gt;belarussianToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>

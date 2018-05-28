@@ -121,6 +121,9 @@
   <data name="buttonChangeColor.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
+  <data name="buttonChangeColor.Text" xml:space="preserve">
+    <value>Change color</value>
+  </data>
   <data name="trackBarPenWidth.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -131,29 +134,32 @@
   <data name="labelPenWidth.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 218</value>
   </data>
+  <data name="labelPenWidth.Size" type="System.Drawing.Size, System.Drawing">
+    <value>69, 17</value>
+  </data>
+  <data name="labelPenWidth.Text" xml:space="preserve">
+    <value>Pen width</value>
+  </data>
   <data name="buttonClear.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="figuresToolStripMenuItem.Text" xml:space="preserve">
-    <value>Figures</value>
+  <data name="buttonClear.Text" xml:space="preserve">
+    <value>Clear</value>
   </data>
   <data name="russianToolStripMenuItem.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>None</value>
   </data>
   <data name="russianToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>196, 30</value>
-  </data>
-  <data name="russianToolStripMenuItem.Text" xml:space="preserve">
-    <value>Russian</value>
+    <value>186, 30</value>
   </data>
   <data name="englishToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>196, 30</value>
+    <value>186, 30</value>
   </data>
-  <data name="englishToolStripMenuItem.Text" xml:space="preserve">
-    <value>English</value>
+  <data name="belorussianToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>186, 30</value>
   </data>
-  <data name="langToolStripMenuItem.Text" xml:space="preserve">
-    <value>Language</value>
+  <data name="belorussianToolStripMenuItem.Text" xml:space="preserve">
+    <value>Belorussian</value>
   </data>
   <data name="pictureBox1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -599,13 +605,22 @@
         177Ev39AQBCAFyFJbSB/QMDTR/QC//y1bbXP9vsEBAQ8Q/z/ARZoc8qnl7eyAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="buttonChangeColor.Text" xml:space="preserve">
-    <value>Change color</value>
+  <data name="figuresToolStripMenuItem.Text" xml:space="preserve">
+    <value>Figures</value>
   </data>
-  <data name="buttonClear.Text" xml:space="preserve">
-    <value>Clear</value>
+  <data name="langToolStripMenuItem.Text" xml:space="preserve">
+    <value>Language</value>
   </data>
-  <data name="labelPenWidth.Text" xml:space="preserve">
-    <value>Pen width</value>
+  <data name="russianToolStripMenuItem.Text" xml:space="preserve">
+    <value>Russian</value>
+  </data>
+  <data name="backcolorToolStripMenuItem.Text" xml:space="preserve">
+    <value>BGround</value>
+  </data>
+  <data name="blackToolStripMenuItem.Text" xml:space="preserve">
+    <value>Black</value>
+  </data>
+  <data name="redToolStripMenuItem.Text" xml:space="preserve">
+    <value>Red</value>
   </data>
 </root>

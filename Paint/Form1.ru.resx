@@ -117,24 +117,45 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="buttonChangeColor.Text" xml:space="preserve">
+    <value>Сменить цвет</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="labelPenWidth.Size" type="System.Drawing.Size, System.Drawing">
+    <value>104, 17</value>
+  </data>
+  <data name="labelPenWidth.Text" xml:space="preserve">
+    <value>Толщина пера</value>
+  </data>
   <data name="figuresToolStripMenuItem.Text" xml:space="preserve">
     <value>Фигуры</value>
   </data>
   <data name="langToolStripMenuItem.Text" xml:space="preserve">
     <value>Язык</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="whiteToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>166, 30</value>
+  </data>
+  <data name="redToolStripMenuItem.Text" xml:space="preserve">
+    <value>Красный</value>
+  </data>
+  <data name="blackToolStripMenuItem.Text" xml:space="preserve">
+    <value>Черный</value>
+  </data>
+  <data name="backcolorToolStripMenuItem.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 14.25pt, style=Bold</value>
+  </data>
+  <data name="backcolorToolStripMenuItem.Text" xml:space="preserve">
+    <value>Фон</value>
+  </data>
   <data name="russianToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>204, 30</value>
+    <value>196, 30</value>
   </data>
   <data name="russianToolStripMenuItem.Text" xml:space="preserve">
     <value>Русский</value>
   </data>
-  <data name="belarussianToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>204, 30</value>
-  </data>
   <data name="englishToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>204, 30</value>
+    <value>196, 30</value>
   </data>
   <data name="englishToolStripMenuItem.Text" xml:space="preserve">
     <value>Английский</value>
@@ -576,14 +597,5 @@
         Pcn/sc+AIM+VJ+Az/dwzZea3xeQgAEEAnsnzT/Z58Qx/hnwGP+vbvUPtc0mcb+Prn6+fEwQg4GlDvkA/
         177Ev39AQBCAFyFJbSB/QMDTR/QC//y1bbXP9vsEBAQ8Q/z/ARZoc8qnl7eyAAAAAElFTkSuQmCC
 </value>
-  </data>
-  <data name="buttonChangeColor.Text" xml:space="preserve">
-    <value>Изменить цвет</value>
-  </data>
-  <data name="buttonClear.Text" xml:space="preserve">
-    <value>Очистить</value>
-  </data>
-  <data name="labelPenWidth.Text" xml:space="preserve">
-    <value>Толщина линий</value>
   </data>
 </root>

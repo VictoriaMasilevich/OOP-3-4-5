@@ -31,6 +31,7 @@ namespace Paint
         public readonly string russian = "ru";
         public readonly string english = "en";
         public string Lang { get; set; }
+        public bool BGColor = false;
         public struct MenuItemInfo
         {
             public string figureName;
@@ -50,6 +51,8 @@ namespace Paint
             }
             LoadLanguageConfig();
             SetLanguage();
+            LoadBGColor();
+            SetBGColor();
             InitializeComponent();
             string[] FigureNames = new string[] { "Line", "Square", "Rectangle", "Circle", "Ellipse" };
             List<MenuItemInfo> itemsList = new List<MenuItemInfo>();
@@ -214,7 +217,7 @@ namespace Paint
             try
             {
                 doc.Load("config.xml");
-                XmlElement elem = doc.DocumentElement["AppLang"];
+                XmlElement elem = doc.DocumentElement["Lang"];
                 Lang = elem.InnerText;
                 doc.Save("config.xml");
             }
@@ -256,9 +259,14 @@ namespace Paint
                 doc.Load("config.xml");
             }
 
-            XmlNode AppLang = doc.CreateElement("AppLang");
+            XmlNode AppLang = doc.CreateElement("Lang");
             doc.DocumentElement.AppendChild(AppLang);
             AppLang.InnerText = Lang;
+
+            XmlNode AppBGColor = doc.CreateElement("BGColor");
+            doc.DocumentElement.AppendChild(AppBGColor);
+            AppBGColor.InnerText = BGColor.ToString();
+
             doc.Save("config.xml");
         }
 
@@ -276,6 +284,62 @@ namespace Paint
             ChangeConfig();
             System.Diagnostics.Process.Start(Application.ExecutablePath);
             this.Close();
+        }
+
+        public void LoadBGColor()
+        {
+            var doc = new XmlDocument();
+            try
+            {
+                doc.Load("config.xml");
+                XmlElement elem = doc.DocumentElement["BGColor"];
+                if (elem.InnerText == "True")
+                {
+                    BGColor = true;
+                }
+                else
+                {
+                    BGColor = false;
+                }
+                doc.Save("config.xml");
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+                BGColor = true;
+            }
+        }
+
+        private void SetBGColor()
+        {
+            try
+            {
+                if (BGColor)
+                {
+                    this.BackColor = Color.Red;
+                }
+                if (!BGColor)
+                {
+                    this.BackColor = Color.Black;
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+                this.BackColor = Color.White;
+            }
+        }
+
+        private void redToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            BGColor = true;
+            ChangeConfig();
+        }
+
+        private void blackToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            BGColor = false;
+            ChangeConfig();
         }
     }
 }

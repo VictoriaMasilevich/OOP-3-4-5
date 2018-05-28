@@ -41,6 +41,9 @@
             this.langToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.russianToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.englishToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.backcolorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.redToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.blackToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBoxColor = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarPenWidth)).BeginInit();
@@ -95,7 +98,8 @@
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(40, 40);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.figuresToolStripMenuItem,
-            this.langToolStripMenuItem});
+            this.langToolStripMenuItem,
+            this.backcolorToolStripMenuItem});
             this.menuStrip1.Name = "menuStrip1";
             // 
             // figuresToolStripMenuItem
@@ -127,6 +131,27 @@
             this.englishToolStripMenuItem.Name = "englishToolStripMenuItem";
             this.englishToolStripMenuItem.Click += new System.EventHandler(this.englishToolStripMenuItem_Click);
             // 
+            // backcolorToolStripMenuItem
+            // 
+            resources.ApplyResources(this.backcolorToolStripMenuItem, "backcolorToolStripMenuItem");
+            this.backcolorToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.redToolStripMenuItem,
+            this.blackToolStripMenuItem});
+            this.backcolorToolStripMenuItem.ForeColor = System.Drawing.Color.RosyBrown;
+            this.backcolorToolStripMenuItem.Name = "backcolorToolStripMenuItem";
+            // 
+            // redToolStripMenuItem
+            // 
+            resources.ApplyResources(this.redToolStripMenuItem, "redToolStripMenuItem");
+            this.redToolStripMenuItem.Name = "redToolStripMenuItem";
+            this.redToolStripMenuItem.Click += new System.EventHandler(this.redToolStripMenuItem_Click);
+            // 
+            // blackToolStripMenuItem
+            // 
+            resources.ApplyResources(this.blackToolStripMenuItem, "blackToolStripMenuItem");
+            this.blackToolStripMenuItem.Name = "blackToolStripMenuItem";
+            this.blackToolStripMenuItem.Click += new System.EventHandler(this.blackToolStripMenuItem_Click);
+            // 
             // pictureBox1
             // 
             resources.ApplyResources(this.pictureBox1, "pictureBox1");
@@ -147,7 +172,6 @@
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.BackColor = System.Drawing.Color.Linen;
             this.Controls.Add(this.buttonClear);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.labelPenWidth);
@@ -186,6 +210,9 @@
         private System.Windows.Forms.ToolStripMenuItem langToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem russianToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem englishToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem backcolorToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem redToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem blackToolStripMenuItem;
     }
 }
 
