@@ -30,8 +30,11 @@ namespace Paint
         FigureList FigureList = new FigureList();
         public readonly string russian = "ru";
         public readonly string english = "en";
+        public readonly string red = "Red";
+        public readonly string black = "Black";
+        public readonly string blue = "Blue";
         public string Lang { get; set; }
-        public bool BGColor = false;
+        public string BGColor { get; set; }
         public struct MenuItemInfo
         {
             public string figureName;
@@ -293,20 +296,13 @@ namespace Paint
             {
                 doc.Load("config.xml");
                 XmlElement elem = doc.DocumentElement["BGColor"];
-                if (elem.InnerText == "True")
-                {
-                    BGColor = true;
-                }
-                else
-                {
-                    BGColor = false;
-                }
+                BGColor = elem.InnerText;
                 doc.Save("config.xml");
             }
             catch (Exception e)
             {
                 MessageBox.Show(e.Message);
-                BGColor = true;
+                BGColor = red;
             }
         }
 
@@ -314,32 +310,37 @@ namespace Paint
         {
             try
             {
-                if (BGColor)
-                {
-                    this.BackColor = Color.Red;
-                }
-                if (!BGColor)
-                {
-                    this.BackColor = Color.Black;
-                }
+                this.BackColor = Color.FromName(BGColor);
             }
             catch (Exception e)
             {
                 MessageBox.Show(e.Message);
-                this.BackColor = Color.White;
+                this.BackColor = Color.Red;
             }
         }
 
         private void redToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            BGColor = true;
+            BGColor = red;
             ChangeConfig();
+            System.Diagnostics.Process.Start(Application.ExecutablePath);
+            this.Close();
         }
 
         private void blackToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            BGColor = false;
+            BGColor = black;
             ChangeConfig();
+            System.Diagnostics.Process.Start(Application.ExecutablePath);
+            this.Close();
+        }
+
+        private void blueToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            BGColor = blue;
+            ChangeConfig();
+            System.Diagnostics.Process.Start(Application.ExecutablePath);
+            this.Close();
         }
     }
 }

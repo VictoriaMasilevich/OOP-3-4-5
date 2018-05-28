@@ -46,6 +46,7 @@
             this.blackToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBoxColor = new System.Windows.Forms.PictureBox();
+            this.blueToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarPenWidth)).BeginInit();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -136,7 +137,8 @@
             resources.ApplyResources(this.backcolorToolStripMenuItem, "backcolorToolStripMenuItem");
             this.backcolorToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.redToolStripMenuItem,
-            this.blackToolStripMenuItem});
+            this.blackToolStripMenuItem,
+            this.blueToolStripMenuItem});
             this.backcolorToolStripMenuItem.ForeColor = System.Drawing.Color.RosyBrown;
             this.backcolorToolStripMenuItem.Name = "backcolorToolStripMenuItem";
             // 
@@ -167,6 +169,12 @@
             resources.ApplyResources(this.pictureBoxColor, "pictureBoxColor");
             this.pictureBoxColor.Name = "pictureBoxColor";
             this.pictureBoxColor.TabStop = false;
+            // 
+            // blueToolStripMenuItem
+            // 
+            resources.ApplyResources(this.blueToolStripMenuItem, "blueToolStripMenuItem");
+            this.blueToolStripMenuItem.Name = "blueToolStripMenuItem";
+            this.blueToolStripMenuItem.Click += new System.EventHandler(this.blueToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -213,6 +221,7 @@
         private System.Windows.Forms.ToolStripMenuItem backcolorToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem redToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem blackToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem blueToolStripMenuItem;
     }
 }
 

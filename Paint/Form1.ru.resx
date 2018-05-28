@@ -133,14 +133,17 @@
   <data name="langToolStripMenuItem.Text" xml:space="preserve">
     <value>Язык</value>
   </data>
-  <data name="whiteToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>166, 30</value>
-  </data>
   <data name="redToolStripMenuItem.Text" xml:space="preserve">
     <value>Красный</value>
   </data>
+  <data name="blackToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>166, 30</value>
+  </data>
   <data name="blackToolStripMenuItem.Text" xml:space="preserve">
     <value>Черный</value>
+  </data>
+  <data name="blueToolStripMenuItem.Text" xml:space="preserve">
+    <value>Синий</value>
   </data>
   <data name="backcolorToolStripMenuItem.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 14.25pt, style=Bold</value>

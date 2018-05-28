@@ -150,16 +150,31 @@
     <value>None</value>
   </data>
   <data name="russianToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>186, 30</value>
+    <value>151, 30</value>
   </data>
   <data name="englishToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>186, 30</value>
+    <value>151, 30</value>
   </data>
-  <data name="belorussianToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>186, 30</value>
+  <data name="redToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>152, 30</value>
   </data>
-  <data name="belorussianToolStripMenuItem.Text" xml:space="preserve">
-    <value>Belorussian</value>
+  <data name="redToolStripMenuItem.Text" xml:space="preserve">
+    <value>Red</value>
+  </data>
+  <data name="blackToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>152, 30</value>
+  </data>
+  <data name="blackToolStripMenuItem.Text" xml:space="preserve">
+    <value>Black</value>
+  </data>
+  <data name="backcolorToolStripMenuItem.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 14.25pt, style=Bold</value>
+  </data>
+  <data name="backcolorToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>106, 38</value>
+  </data>
+  <data name="backcolorToolStripMenuItem.Text" xml:space="preserve">
+    <value>BGround</value>
   </data>
   <data name="pictureBox1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -605,22 +620,16 @@
         177Ev39AQBCAFyFJbSB/QMDTR/QC//y1bbXP9vsEBAQ8Q/z/ARZoc8qnl7eyAAAAAElFTkSuQmCC
 </value>
   </data>
+  <data name="blueToolStripMenuItem.Text" xml:space="preserve">
+    <value>Blue</value>
+  </data>
+  <data name="englishToolStripMenuItem.Text" xml:space="preserve">
+    <value>English</value>
+  </data>
   <data name="figuresToolStripMenuItem.Text" xml:space="preserve">
     <value>Figures</value>
   </data>
   <data name="langToolStripMenuItem.Text" xml:space="preserve">
     <value>Language</value>
-  </data>
-  <data name="russianToolStripMenuItem.Text" xml:space="preserve">
-    <value>Russian</value>
-  </data>
-  <data name="backcolorToolStripMenuItem.Text" xml:space="preserve">
-    <value>BGround</value>
-  </data>
-  <data name="blackToolStripMenuItem.Text" xml:space="preserve">
-    <value>Black</value>
-  </data>
-  <data name="redToolStripMenuItem.Text" xml:space="preserve">
-    <value>Red</value>
   </data>
 </root>

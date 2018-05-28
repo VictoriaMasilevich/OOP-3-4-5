@@ -565,16 +565,13 @@
         177Ev39AQBCAFyFJbSB/QMDTR/QC//y1bbXP9vsEBAQ8Q/z/ARZoc8qnl7eyAAAAAElFTkSuQmCC
 </value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="labelPenWidth.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="&gt;&gt;черныйToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="pictureBoxColor.Location" type="System.Drawing.Point, System.Drawing">
     <value>189, 92</value>
   </data>
-  <data name="pictureBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>364, 55</value>
-  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="menuStrip1.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
@@ -627,9 +624,6 @@
   <data name="&gt;&gt;pictureBox1.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>Form1</value>
-  </data>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>96, 96</value>
   </data>
@@ -660,14 +654,11 @@
   <data name="&gt;&gt;russianToolStripMenuItem.Name" xml:space="preserve">
     <value>russianToolStripMenuItem</value>
   </data>
-  <data name="фонToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>64, 38</value>
-  </data>
   <data name="&gt;&gt;pictureBox1.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;белорусскийToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;redToolStripMenuItem.Name" xml:space="preserve">
+    <value>redToolStripMenuItem</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -690,6 +681,9 @@
   <data name="buttonClear.Text" xml:space="preserve">
     <value>Очистить</value>
   </data>
+  <data name="&gt;&gt;whiteToolStripMenuItem.Name" xml:space="preserve">
+    <value>whiteToolStripMenuItem</value>
+  </data>
   <data name="buttonChangeColor.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 10.2pt</value>
   </data>
@@ -702,8 +696,8 @@
   <data name="&gt;&gt;colorDialog1.Name" xml:space="preserve">
     <value>colorDialog1</value>
   </data>
-  <data name="&gt;&gt;blackToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="pictureBox1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>364, 55</value>
   </data>
   <data name="&gt;&gt;белыйToolStripMenuItem.Name" xml:space="preserve">
     <value>белыйToolStripMenuItem</value>
@@ -717,14 +711,17 @@
   <data name="&gt;&gt;englishToolStripMenuItem.Name" xml:space="preserve">
     <value>englishToolStripMenuItem</value>
   </data>
-  <data name="russianToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>184, 30</value>
+  <data name="&gt;&gt;blackToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="menuStrip1.AutoSize" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
   <data name="belarussianToolStripMenuItem.Text" xml:space="preserve">
     <value>Belarussian</value>
+  </data>
+  <data name="&gt;&gt;pictureBox1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="menuStrip1.Size" type="System.Drawing.Size, System.Drawing">
     <value>995, 42</value>
@@ -738,8 +735,11 @@
   <data name="pictureBox1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
   </data>
-  <data name="buttonChangeColor.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
+  <data name="figuresToolStripMenuItem.Text" xml:space="preserve">
+    <value>Figures</value>
+  </data>
+  <data name="&gt;&gt;labelPenWidth.Name" xml:space="preserve">
+    <value>labelPenWidth</value>
   </data>
   <data name="&gt;&gt;labelPenWidth.Parent" xml:space="preserve">
     <value>$this</value>
@@ -749,6 +749,9 @@
   </data>
   <data name="&gt;&gt;openFileDialog1.Name" xml:space="preserve">
     <value>openFileDialog1</value>
+  </data>
+  <data name="blueToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>166, 30</value>
   </data>
   <data name="&gt;&gt;buttonClear.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -762,11 +765,11 @@
   <data name="whiteToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>159, 30</value>
   </data>
+  <data name="&gt;&gt;trackBarPenWidth.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
   <data name="labelPenWidth.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 10.2pt</value>
-  </data>
-  <data name="ToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>204, 30</value>
   </data>
   <data name="figuresToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>94, 40</value>
@@ -795,14 +798,17 @@
   <data name="&gt;&gt;russianToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;labelPenWidth.Name" xml:space="preserve">
-    <value>labelPenWidth</value>
+  <data name="фонToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>64, 38</value>
   </data>
   <data name="&gt;&gt;trackBarPenWidth.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;buttonClear.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="&gt;&gt;blueToolStripMenuItem.Name" xml:space="preserve">
+    <value>blueToolStripMenuItem</value>
+  </data>
+  <data name="ToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>204, 30</value>
   </data>
   <data name="&gt;&gt;фонToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -834,14 +840,17 @@
   <data name="&gt;&gt;ToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="belarussianToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>184, 30</value>
+  <data name="redToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>166, 30</value>
+  </data>
+  <data name="&gt;&gt;buttonChangeColor.ZOrder" xml:space="preserve">
+    <value>5</value>
   </data>
   <data name="&gt;&gt;черныйToolStripMenuItem.Name" xml:space="preserve">
     <value>черныйToolStripMenuItem</value>
   </data>
-  <data name="figuresToolStripMenuItem.Text" xml:space="preserve">
-    <value>Figures</value>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>Form1</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Paint</value>
@@ -849,8 +858,14 @@
   <data name="buttonChangeColor.Size" type="System.Drawing.Size, System.Drawing">
     <value>166, 124</value>
   </data>
+  <data name="&gt;&gt;buttonClear.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="&gt;&gt;langToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="buttonChangeColor.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
   </data>
   <data name="trackBarPenWidth.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
@@ -870,20 +885,20 @@
   <data name="&gt;&gt;saveFileDialog1.Type" xml:space="preserve">
     <value>System.Windows.Forms.SaveFileDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;whiteToolStripMenuItem.Name" xml:space="preserve">
-    <value>whiteToolStripMenuItem</value>
+  <data name="russianToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>184, 30</value>
   </data>
-  <data name="menuStrip1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
+  <data name="&gt;&gt;blueToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="buttonChangeColor.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
+  <data name="&gt;&gt;redToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;englishToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;buttonChangeColor.ZOrder" xml:space="preserve">
-    <value>5</value>
+  <data name="belarussianToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>184, 30</value>
   </data>
   <data name="&gt;&gt;figuresToolStripMenuItem.Name" xml:space="preserve">
     <value>figuresToolStripMenuItem</value>
@@ -900,8 +915,8 @@
   <data name="&gt;&gt;trackBarPenWidth.Type" xml:space="preserve">
     <value>System.Windows.Forms.TrackBar, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;trackBarPenWidth.ZOrder" xml:space="preserve">
-    <value>3</value>
+  <data name="&gt;&gt;белорусскийToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;whiteToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -918,11 +933,11 @@
   <data name="labelPenWidth.Text" xml:space="preserve">
     <value>Толщина линий</value>
   </data>
-  <data name="&gt;&gt;pictureBox1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="labelPenWidth.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
-  <data name="&gt;&gt;черныйToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="menuStrip1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
   </data>
   <data name="черныйToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>159, 30</value>
@@ -938,6 +953,9 @@
   </data>
   <data name="labelPenWidth.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 0, 2, 0</value>
+  </data>
+  <data name="buttonChangeColor.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
   </data>
   <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>ru</value>
